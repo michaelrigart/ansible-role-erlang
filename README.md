@@ -6,7 +6,6 @@ An ansible role for installing Erlang.
 
 For more information on Erlang, [visit the Erlang website](https://www.erlang-solutions.com)
 
-
 Role Variables
 --------------
 
