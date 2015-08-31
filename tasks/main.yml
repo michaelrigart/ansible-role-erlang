@@ -1,22 +1,9 @@
 ---
 
-- name: repository - add the GPG key
-  apt_key:
-    url: '{{ erlang_ppa_key }}'
-    id: '{{ erlang_ppa_key_id }}'
-    state: present
-  when: erlang_ppa_key != None
+- include: debian.yml
+  when: ansible_os_family == 'Debian'
+  tags: package
 
-- name: add repository to install Erlang from
-  apt_repository:
-    repo: '{{ erlang_ppa_repo }}'
-    update_cache: yes
-  when: erlang_ppa_repo != None
-
-- name: install packages
-  apt:
-    pkg: '{{ item }}'
-    state: installed
-    update_cache: yes
-    cache_valid_time: 3600
-  with_items: erlang_packages
+- include: redhat.yml
+  when: ansible_os_family == 'RedHat'
+  tags: package

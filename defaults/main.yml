@@ -3,5 +3,7 @@
 erlang_ppa_repo: 'deb http://packages.erlang-solutions.com/{{ ansible_distribution | lower }} {{ ansible_distribution_release | lower }} contrib'
 erlang_ppa_key: 'http://packages.erlang-solutions.com/ubuntu/erlang_solutions.asc'
 erlang_ppa_key_id: 'A14F4FCA'
+erlang_rpm_key: 'http://packages.erlang-solutions.com/rpm/erlang_solutions.asc'
+erlang_yum_repo_path: '/etc/yum.repos.d'
 erlang_packages:
   - erlang
